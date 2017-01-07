@@ -11,7 +11,7 @@ public class HelloWorld {
                 .addHttpListener(8080, "0.0.0.0")
                 .setHandler(exchange -> {
                     exchange.setStatusCode(StatusCodes.OK);
-                    exchange.getRequestHeaders()
+                    exchange.getResponseHeaders()
                             .put(Headers.CONTENT_TYPE, "text/plain; charset=UTF-8");
                     exchange.getResponseSender().send("Hello, world!");
                 })
